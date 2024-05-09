@@ -830,7 +830,7 @@ mcelem_array_contained_selec(Datum *mcelem, int nmcelem,
 	 * of a column value having zero occurrences of such elements.  See above
 	 * for the definition of "rest".
 	 */
-	mult *= exp(-rest);
+	mult *= expf(-rest);
 
 	/*----------
 	 * Using the distinct element count histogram requires
@@ -1065,7 +1065,7 @@ calc_distr(const float *p, int n, int m, float rest)
 			row[i] = 0.0f;
 
 		/* Value of Poisson distribution for 0 occurrences */
-		t = exp(-rest);
+		t = expf(-rest);
 
 		/*
 		 * Calculate convolution of previously computed distribution and the

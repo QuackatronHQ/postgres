@@ -264,7 +264,7 @@ calc_rank_and(const float *w, TSVector t, TSQuery q)
 
 							if (!dist)
 								dist = MAXENTRYPOS;
-							curw = sqrt(wpos(post[l]) * wpos(ct[p]) * word_distance(dist));
+							curw = sqrtf(wpos(post[l]) * wpos(ct[p]) * word_distance(dist));
 							res = (res < 0) ? curw : 1.0 - (1.0 - res) * (1.0 - curw);
 						}
 					}
